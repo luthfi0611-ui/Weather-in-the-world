@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Rain Animation */
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255,255,255,0.4);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Floating Cloud */
+@keyframes float {
+  0% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(-10px); }
+}
+
+.cloud {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sun Glow */
+.sun-glow {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+/* SUN SPIN */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.sun {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* HEAT WAVE */
+@keyframes heatWave {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+.heat {
+  animation: heatWave 1.5s ease-in-out infinite;
+}
+
+/* SNOW */
+.snowflake {
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  animation: fallSnow linear infinite;
+}
+@keyframes fallSnow {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* FOG */
+@keyframes fogMove {
+  0% { transform: translateX(-20px); opacity: 0.5; }
+  50% { transform: translateX(20px); opacity: 0.7; }
+  100% { transform: translateX(-20px); opacity: 0.5; }
+}
+.fog {
+  animation: fogMove 6s ease-in-out infinite;
+}
+
+/* THUNDER FLASH */
+@keyframes flash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(255,255,255,0.3); }
+}
+.flash {
+  animation: flash 2s infinite;
+}
