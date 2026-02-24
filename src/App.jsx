@@ -5,7 +5,8 @@ function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const API_KEY = import.meta.env.VITE_WEATHER_KEY;
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  console.log("API KEY:", API_KEY)
   const url = `/weather?q=${location}&units=metric&appid=${API_KEY}`;
 
   const weatherMain = data.weather?.[0]?.main;
